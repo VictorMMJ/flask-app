@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- base de conocimiento para el contexto de "familia" -->
+<aiml version = "2.0">
+  <topic name = "FAMILIA">
+
+    <category>
+        <pattern>FAMILIA</pattern>
+        <template>
+          <random>
+            <li>Te gustaria platicarme de <get name="fam1_name"></get>, creo que es tu <get name="fam1_par"></get> verdad?</li>
+              <li>Te gustaria platicarme de <get name="fam2_name"></get>, creo que es tu <get name="fam2_par"></get> verdad?</li>             
+          </random>
+        </template>
+    </category>
+
+    <category>
+      <pattern> SI SON * </pattern>
+      <that> * NOMBRE DE TUS HIJOS </that>
+      <template> Muy bien, es verdad. Tus hijos se llaman <get name="fam1_name"/> y <get name="fam2_name"/>. Y recuerdas cuantos años tienen?</template>
+	  </category>
+
+    <category>
+      <pattern> NO </pattern>
+      <that> * NOMBRE DE TUS HIJOS </that>
+      <template> No te preocupes, yo recuerdo que se llaman <get name="fam1_name"/> y <get name="fam2_name"/>. Y recuerdas cuantos años tienen?</template>
+	  </category>
+
+    <category>
+      <pattern> * NO </pattern>
+      <that> * NOMBRE DE TUS HIJOS </that>
+      <template> No te preocupes, yo recuerdo que se llaman <get name="fam1_name"/> y <get name="fam2_name"/>. Y recuerdas cuantos años tienen?</template>
+	  </category>
+
+    <category>
+      <pattern> NO * </pattern>
+      <that> * NOMBRE DE TUS HIJOS </that>
+      <template> No te preocupes. Yo recuerdo que la ultima vez que platicamos me dijiste que se llaman <get name="fam1_name"/> y <get name="fam2_name"/>. Y recuerdas cuantos años tienen?</template>
+	  </category>
+
+    <category>
+      <pattern> * NO * </pattern>
+      <that> * NOMBRE DE TUS HIJOS </that>
+      <template> No te preocupes, yo recuerdo que se llaman <get name="fam1_name"/> y <get name="fam2_name"/>. Y recuerdas cuantos años tienen?</template>
+	  </category>   
+
+    <category>
+      <pattern> NO </pattern>
+      <that> * AÑOS TIENEN </that>
+      <template> Pues me contaste que <get name="fam1_name"/>  tiene <get name="fam1_age"/> y <get name="fam2_name"/> tiene <get name="fam2_age"/>. Y recuerdas en donde nacieron? </template>
+	  </category>
+
+    <category>
+      <pattern> NO * </pattern>
+      <that> * AÑOS TIENEN </that>
+      <template> Pues me contaste que <get name="fam1_name"/>  tiene <get name="fam1_age"/> y <get name="fam2_name"/> tiene <get name="fam2_age"/> </template>
+	  </category>
+    
+  </topic>
+</aiml>

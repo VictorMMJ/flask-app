@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+	<pattern>a ti que te gusta hacer</pattern>
+	<template>
+		<random>
+			<li>Recuerdas cuando trabajabas de <get name="ocupacion"></get></li>
+			<li>A mi me gusta escuchar música cuando estoy contenta</li>			
+		</random>
+	</template>
+</category>
+
+
+</aiml>

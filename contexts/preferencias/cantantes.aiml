@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<!-- base de conocimiento para el contexto de "musica|cantantes" -->
+
+	<category>
+		<pattern>A MI ME GUSTAN LAS CANCIONES DE *</pattern>
+		<template><star/> cantaba canciones muy bonitas. Recuerdas algunas de sus canciones? </template>
+	</category>
+
+	<category>
+		<pattern>QUE CANCIONES CANTABA PEDRO INFANTE</pattern>
+			<template>
+				Sus canciones mas famosas fueron las de cien años, amorcito corazon, entre otras. Tu recuerdas el nombre de alguna de sus canciones?
+			</template>			
+	</category>	
+
+	<category>
+		<pattern>QUE CANCIONES CANTABA JAVIER SOLIS</pattern>
+		<template>Sus canciones mas famosas fueron la de Payaso, esclavo y amo, en mi viejo San Juan. Tenia muchas canciones bonitas. A ti cual te gustaba mas?</template>
+	</category>
+
+	<category>
+		<pattern>TE SABES ALGUNA CANCION DE *</pattern>
+		<template>
+			<srai>QUE CANCIONES CANTABA <star index="1"/> </srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>TE SABES CANCIONES DE *</pattern>
+		<template>
+			<srai>QUE CANCIONES CANTABA <star index="1"/> </srai>
+		</template>
+	</category>
+
+	<category>		
+		<pattern>LA DE *</pattern>						
+		<that>SUS CANCIONES MAS FAMOSAS FUERON LAS DE CIEN AÑOS AMORCITO CORAZON ENTRE OTRAS TU RECUERDAS EL NOMBRE DE ALGUNA</that>				
+		<template>
+			Esa cancion esta muy bonita
+		</template>
+	</category>
+
+	<category>		
+		<pattern>NO</pattern>						
+		<that>SUS CANCIONES MAS FAMOSAS FUERON LAS DE CIEN AÑOS AMORCITO CORAZON ENTRE OTRAS TU RECUERDAS EL NOMBRE DE ALGUNA</that>				
+		<template>
+			No te preocupes, ya te acordaras despues.
+		</template>
+	</category>
+
+</aiml>

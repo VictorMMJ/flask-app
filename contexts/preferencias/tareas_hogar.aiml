@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- base de conocimiento para el contexto de "saludo" -->
+<aiml version = "2.0">
+
+	<category>
+      <pattern>HAZME UNA PREGUNTA</pattern>
+      <template>
+         Te gusta la pizza?
+      </template>
+	</category>	
+
+	<category>
+      <pattern>HAZME OTRA PREGUNTA</pattern>
+      <template>
+         Seguro, te gusta ver películas?. Que emoción!
+      </template>
+    </category>	
+
+    <category>
+    	<pattern>SI</pattern>
+    	<that>TE GUSTA LA PIZZA</that>
+    	<template>Cuál es tu favorita?</template>
+    </category>
+
+    <category>
+    	<pattern>NO</pattern>
+    	<that>TE GUSTA LA PIZZA</that>
+    	<template>Que mal que no te guste</template>
+    </category>
+
+    <category>
+    	<pattern>SI</pattern>
+    	<that>SEGURO TE GUSTA VER PELÍCULAS QUE EMOCIÓN</that>
+    	<template>Mi favorita es la de Terminator</template>
+    </category>
+
+    <category>
+    	<pattern>NO</pattern>
+    	<that>SEGURO TE GUSTA VER PELÍCULAS QUE EMOCIÓN</that>
+    	<template>Prefieres las series?</template>
+    </category>
+
+</aiml>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- base de conocimiento para el contexto de "Conversación inicial" -->
+<aiml version = "2.0">
+   
+<!-- Inicio de opciones de saludo -->
+   <category>
+      <pattern>HOLA</pattern> 
+      <template>
+         <random>
+            <li> Hola <get name="primer_nombre_paciente"/>.</li>            
+            <li> Hola <get name="primer_nombre_paciente"/>, me da gusto verte de nuevo.</li>
+            <li> Que tal <get name="primer_nombre_paciente"/>, me da gusto saludarte. </li>            
+            <li> Excelente día <get name="primer_nombre_paciente"/>, me da gusto verte por aquí. </li>
+            <li> Que gusto verte de nuevo <get name="primer_nombre_paciente"/>, te ves muy bien. </li>
+         </random>   
+         <random>
+            <li> Cómo estas? </li>
+            <li> Cómo te sientes hoy? </li>
+            <li> Cómo te encuentras el día de hoy? </li>
+            <li> Cómo amaneciste el día de hoy?</li>
+            <li> Cómo has estado? </li>
+         </random>
+      </template>      
+   </category>
+
+   <category>
+   <pattern>HOLA *</pattern>
+      <template>
+         <srai>HOLA</srai>
+      </template>
+   </category>
+
+   <category>
+   <pattern>QUE TAL</pattern>
+      <template>
+         <srai>HOLA</srai>
+      </template>
+   </category>
+
+   <category>
+      <pattern>* QUE TAL</pattern>
+      <template>
+         <srai>HOLA</srai>
+      </template>
+   </category>
+   
+   <category>
+      <pattern>QUE TAL *</pattern>
+      <template>
+         <srai>HOLA</srai>
+      </template>
+   </category>
+
+   <category>
+      <pattern>* QUE TAL *</pattern>
+      <template>
+         <srai>HOLA</srai>
+      </template>
+   </category>  
+
+   <category>
+      <pattern>BUENOS DIAS</pattern>
+      <template>
+         <srai>HOLA</srai>
+      </template>
+   </category>
+
+   <category>
+      <pattern>BUENAS TARDES</pattern>
+      <template>
+         <srai>HOLA</srai>
+      </template>
+   </category>
+<!-- Fin de opciones de saludo -->   
+
+<!-- Inicio de estado de animo bien -->
+   <category>
+      <pattern> BIEN </pattern>
+      <that> * HOY </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> * BIEN </pattern>
+      <that> * HOY </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> BIEN *</pattern>
+      <that> * HOY </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> * BIEN *</pattern>
+      <that> * HOY </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> BIEN </pattern>
+      <that> * ESTADO </that>      <!-- Como has estado -->
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> BIEN *</pattern>
+      <that> * ESTADO </that>      <!-- Como has estado -->
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> * BIEN </pattern>
+      <that> * ESTADO </that>      <!-- Como has estado -->
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> * BIEN *</pattern>
+      <that> * ESTADO </that>      <!-- Como has estado -->
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> BIEN </pattern>
+      <that> * ESTAS </that>      <!-- Como has estado -->      
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> BIEN *</pattern>
+      <that> * ESTAS </that>      <!-- Como has estado -->      
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern>* BIEN </pattern>
+      <that> * ESTAS </that>      <!-- Como has estado -->      
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern>* BIEN *</pattern>
+      <that> * ESTAS </that>      <!-- Como has estado -->      
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+<!-- Fin de estado de animo bien -->
+
+<!-- Estado de animo mal -->
+   <category>
+      <pattern> NO * BIEN </pattern>
+      <that> * HOY </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> MAL </pattern>
+      <that> * HOY </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> * MAL </pattern>
+      <that> * HOY </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> CANSADO </pattern>
+      <that> * HOY </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> * CANSADO </pattern>
+      <that> * HOY </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> CANSADA </pattern>
+      <that> * HOY </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> * CANSADA </pattern>
+      <that> * HOY </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> NO * BIEN </pattern>
+      <that> * ESTADO </that>       <!-- Como has estado -->
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> MAL </pattern>
+      <that> * ESTADO </that>       <!-- Como has estado -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> * MAL </pattern>
+      <that> * ESTADO </that>       <!-- Como has estado -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> CANSADO </pattern>
+      <that> * ESTADO </that>       <!-- Como has estado -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> * CANSADO </pattern>
+      <that> * ESTADO </that>       <!-- Como has estado -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> CANSADA </pattern>
+      <that> * ESTADO </that>       <!-- Como has estado -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> * CANSADA </pattern>
+      <that> * ESTADO </that>       <!-- Como has estado -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> NO * BIEN </pattern>
+      <that> * ESTAS </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR BIEN </srai></template>
+   </category>
+
+   <category>
+      <pattern> MAL </pattern>
+      <that> * ESTAS </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> * MAL </pattern>
+      <that> * ESTAS </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> CANSADO </pattern>
+      <that> * ESTAS </that>       <!-- Como te sientes el día de hoy -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> * CANSADO </pattern>
+      <that> * ESTAS </that>       <!-- Como estas -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> CANSADA </pattern>
+      <that> * ESTAS </that>       <!-- Como te estas -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+
+   <category>
+      <pattern> * CANSADA </pattern>
+      <that> * ESTAS </that>       <!-- Como te estas -->
+      <template><srai> ESTAR MAL </srai></template>
+   </category>
+<!-- Fin de estado de animo mal -->
+
+   <category>
+      <pattern> ESTAR BIEN </pattern>
+      <template> 
+         <random>
+            <li> Que bueno, me da gusto oir que estas bien. </li>
+            <li> Que alegría oir eso. </li>
+            <li> Eso me alegra mucho. </li>            
+            <li> Me da gusto oirlo. </li>
+         </random>
+         <random>            
+            <li> Te gustaría que platicáramos un ratito? </li>
+            <li> Te parece bien si platicamos por un ratito? </li>
+            <li> Quisieras platicar conmigo un ratito?</li>
+         </random>
+      </template>
+   </category>
+
+   <category>
+      <pattern> ESTAR MAL </pattern>
+      <template> 
+         <random>       <!-- Frase de comprensión -->
+            <li> Me apena oir eso. </li>
+            <li> Que lastima oir eso. </li>
+            <li> Como lamento oir que no estas tan bien. </li>            
+         </random>
+         <random>       <!-- Frase de soporte o de apoyo -->            
+            <li> Yo creo que si platicamos puede servir para que te animes. </li>
+            <li> Estoy segura de que si platicamos puede ser que te sientas mejor. </li>
+            <li> Pero me parece que si platicamos un ratito servirá para que te animes. </li>
+         </random>
+         <random>       <!-- Pregunta para motivar la conversación -->            
+            <li> Te gustaría platicar conmigo? </li>
+            <li> Quisieras platicar conmigo?</li>
+            <li> A mi me gustaría mucho platicar contigo. A ti te gustaría platicar conmigo?</li>
+         </random>
+      </template>
+   </category>   
+
+   <category>
+      <pattern> SI </pattern> 
+      <that> * RATITO </that>    <!-- Platicar un ratito -->      
+      <template> <srai>INICIO CONVERSACION</srai> </template> 
+   </category>   
+
+   <category>
+      <pattern> SI *</pattern> 
+      <that> * RATITO </that>    <!-- Platicar un ratito -->      
+      <template> <srai>INICIO CONVERSACION</srai> </template> 
+   </category>   
+
+   <category>
+      <pattern> BUENO </pattern> 
+      <that> * RATITO </that>    <!-- Platicar un ratito -->      
+      <template> <srai>INICIO CONVERSACION</srai> </template> 
+   </category>   
+
+   <category>
+      <pattern> BUENO *</pattern> 
+      <that> * RATITO </that>    <!-- Platicar un ratito -->      
+      <template> <srai>INICIO CONVERSACION</srai> </template> 
+   </category>
+
+   <category>
+      <pattern> SI </pattern>
+      <that> * CONMIGO </that>   <!-- Platicar conmigo -->
+      <template><srai> INICIO CONVERSACION </srai></template>
+   </category>
+
+   <category>
+      <pattern> SI *</pattern>
+      <that> * CONMIGO </that>   <!-- Platicar conmigo -->
+      <template><srai> INICIO CONVERSACION </srai></template>
+   </category>
+
+   <category>
+      <pattern> BUENO </pattern>
+      <that> * CONMIGO </that>   <!-- Platicar conmigo -->
+      <template><srai> INICIO CONVERSACION </srai></template>
+   </category>   
+   
+   <category>
+      <pattern> INICIO CONVERSACION </pattern>
+      <template> Perfecto. Bueno que te parece si platicamos sobre tu familia? </template>
+   </category> 
+  
+	<category>
+		<pattern> SI </pattern>
+		<that> * FAMILIA </that>
+		<!-- <template> Muy bien. Y todavia puedes recordar bien el nombre de tus hijos?</template> -->
+      <template> Muy bien a mi me encanta platicar sobre la <set name="topic">familia</set>. Recuerdas cuántos hijos tienes?</template>
+	</category>
+
+   <category>
+		<pattern> SI * </pattern>
+		<that> * FAMILIA </that>
+		<!-- <template> Muy bien. Y todavia puedes recordar bien el nombre de tus hijos?</template> -->
+      <template> Muy bien a mi me encanta platicar sobre la <set name="topic">familia</set>. Recuerdas cuántos hijos tienes?</template>
+	</category>
+
+   <category>
+      <pattern>*</pattern>
+      <template>Lo siento. Por el momento no se como responder a eso</template>
+    </category>
+
+</aiml>

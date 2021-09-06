@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- base de conocimiento para el contexto de "saludo" -->
+<aiml version = "2.0">
+
+	<category>
+    	<pattern>NOMBRE BOT</pattern>
+        <template>
+            <random>
+				<!-- <li> Mi nombre es <bot name="name"></bot>, mucho gusto. Tu como te llamas?</li> -->
+               	<li> Mi nombre es <bot name="name"></bot>. Te gustaria saber un poco mas de mi?</li>
+               	<li>Soy <bot name="name"></bot> y me gusta mucho platicar con las personas. A ti te gusta platicar?</li>
+               	<li>Mis amigos me dicen <bot name="name"></bot>. Te gusta mi nombre?</li>
+            </random>
+        </template>
+   	</category>
+   
+   	<category>
+        <pattern>COMO TE LLAMAS</pattern>
+        <template>
+            <srai>NOMBRE BOT</srai>
+        </template>
+   	</category>
+
+   	<category>
+        <pattern>QUIEN ERES</pattern>
+        <template>
+            <srai>NOMBRE BOT</srai>
+        </template>
+	</category>
+
+	<category>
+        <pattern>CUAL ES TU NOMBRE</pattern>
+        <template>
+            <srai>NOMBRE BOT</srai>
+        </template>
+	</category>
+
+	<category>
+		<pattern> SI </pattern>
+		<that> * TE GUSTA MI NOMBRE</that>
+		<template> Gracias eres muy amable. Y tu como te llamas?</template>
+	</category>
+
+	<category>
+		<pattern> NO </pattern>
+		<that> * TE GUSTA MI NOMBRE</that>
+		<template> Que mal, lo bueno que por lo menos a mi si me gusta. Y tu como te llamas?</template>
+	</category>
+
+	<category>
+		<pattern> * </pattern>
+		<that>* COMO TE LLAMAS </that>
+		<template> Ese es un nombre muy bonito. Y a ti de que te gusta platicar <get name="patient_name"></get>?</template>
+	</category>			
+
+	<category>
+		<pattern> SI </pattern>
+		<that>* MAS DE MI </that>
+		<template> A mi me gusta mucho platicar con las personas. Te gustaria platicar conmigo?</template>
+	</category>	
+
+<!-- 	<category>
+		<pattern> SI </pattern>
+		<that>* PLATICAR CONMIGO </that>
+		<template> Eso me parece muy bien. Pasaremos un rato agradable hablando de varias cosas. Quieres saber de que me gusta platicar? 	</template>
+	</category>	 -->
+
+	<category>
+		<pattern> SI </pattern>
+		<that> * DE QUE ME GUSTA PLATICAR </that>
+		<template> Me gusta platicar sobre mi familia, sobre musica, peliculas y las cosas que me gusta hacer. Y a ti <get name="patient_name"/> de que te gusta platicar?	</template>
+	</category>
+
+	<category>
+		<pattern> DE TODO </pattern>
+		<that> * DE QUE TE GUSTA PLATICAR *</that>
+		<template> A pues que te parece si platicamos un poco sobre cual es la comida que te gusta?	</template>
+	</category>	
+
+	<category>
+		<pattern> * DE TODO </pattern>
+		<that> * DE QUE TE GUSTA PLATICAR *</that>
+		<template> A pues que te parece si platicamos un poco sobre cual es la comida que te gusta?</template>
+	</category>	
+
+	<category>
+		<pattern> * FAMILIA </pattern>
+		<that> * DE QUE TE GUSTA PLATICAR * </that>
+		<template> En serio!, a ver cuentame recuerdas cuantos hijos tienes? </template>
+	</category>	
+
+</aiml>

@@ -1,5 +1,7 @@
 from flask_socketio import SocketIO, send
 from flask import Flask , render_template
+import motorConversacional as mc
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
@@ -16,9 +18,10 @@ def handle_connect():
 @socketio.on('message')
 def handle_message(msg):
 	print('Mensaje recibido:' + msg)
-    #system_response = mc.genera_respuesta(msg)
-    #send(system_response, broadcast=True)   #broadcast=True envía el mensaje a todos los usuarios conectados
-	send(msg)
+	system_response = mc.genera_respuesta(msg)
+	send(system_response, broadcast=True)   #broadcast=True envía el mensaje a todos los usuarios conectados
+	
     
 if __name__ == "__main__":
-	app.run()
+	#app.run()
+	socketio.run(app, debug=True)
