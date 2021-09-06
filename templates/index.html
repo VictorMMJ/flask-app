@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Testing web sockets</title>
+</head>
+<body>    
+    <script type="text/javascript">
+    $(document).ready(function(){
+        /* Se crea un objeto socket y se conecta al servidor y se le pasa la URL del servidor */
+        const socket = io();
+
+        /* socket.on('connect', function(){
+            socket.send('Nuevo usuario conectado');
+        }); */
+        
+        socket.on('message', function(msg){
+            $("#messages").append('<li>'+msg+'</li>');
+            console.log('Mensaje recibido desde servidor: ' + msg);
+        });
+
+        $('#sendButton').on('click', function(){
+            socket.send($('#myMessage').val());
+            $('#myMessage').val('');
+        });
+    });
+    </script>
+
+    <ul id="messages"></ul>
+    <input type="text" id="myMessage">
+    <button id="sendButton">Send message</button>
+</body>
+</html>
