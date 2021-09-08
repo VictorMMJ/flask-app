@@ -7,15 +7,22 @@
 		<pattern>ADIOS</pattern>
 		<template>
             <random>
-            <li>Adiós <get name="patient_name"/>, me la pase muy bien contigo hoy</li>
-            <li>Cuidate mucho <get name="patient_name"/>, espero poder platicar contigo muy pronto nuevamente</li>
-            <li>Nos vemos <get name="patient_name"/>. Me gusto mucho platicar contigo el día de hoy. Descansa</li>
+            <li>Adiós <get name="patient_name"/>, me la pase muy bien plaaticando contigo</li>
+            <li>Cuidate mucho <get name="patient_name"/>, espero que podamos platicar muy pronto nuevamente</li>
+            <li>Nos vemos <get name="patient_name"/>. Me gustó mucho platicar contigo el día de hoy. Descansa</li>
             <li>Hasta luego <get name="patient_name"/>. Nos vemos muy pronto</li>
             </random>            
 		</template>
 	</category>
 
     <category>
+		<pattern> * ADIOS </pattern>
+		<template>
+			<srai> ADIOS </srai>			
+		</template>
+	</category>
+
+	<category>
 		<pattern> HASTA LUEGO </pattern>
 		<template>
 			<srai> ADIOS </srai>			

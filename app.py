@@ -14,6 +14,9 @@ def index():
 @socketio.on('connect')
 def handle_connect():
 	print('Usuario conectado')
+	system_response = mc.genera_respuesta('hola')
+	send(system_response, broadcast=True)
+	
 
 @socketio.on('message')
 def handle_message(msg):

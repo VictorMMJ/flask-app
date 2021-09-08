@@ -9,7 +9,7 @@
             <random>
 				<!-- <li> Mi nombre es <bot name="name"></bot>, mucho gusto. Tu como te llamas?</li> -->
                	<li> Mi nombre es <bot name="name"></bot>. Te gustaria saber un poco mas de mi?</li>
-               	<li>Soy <bot name="name"></bot> y me gusta mucho platicar con las personas. A ti te gusta platicar?</li>
+               	<li>Soy <bot name="name"></bot> y me gusta mucho platicar con las personas. Te gustaría platicar conmigo?</li>
                	<li>Mis amigos me dicen <bot name="name"></bot>. Te gusta mi nombre?</li>
             </random>
         </template>
@@ -57,7 +57,7 @@
 	<category>
 		<pattern> SI </pattern>
 		<that>* MAS DE MI </that>
-		<template> A mi me gusta mucho platicar con las personas. Te gustaria platicar conmigo?</template>
+		<template> A mí me gusta mucho platicar con las personas. Te gustaria platicar conmigo?</template>
 	</category>	
 
 <!-- 	<category>

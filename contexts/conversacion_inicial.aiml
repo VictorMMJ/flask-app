@@ -358,7 +358,7 @@
    
    <category>
       <pattern> INICIO CONVERSACION </pattern>
-      <template> Perfecto. Bueno que te parece si platicamos sobre tu familia? </template>
+      <template> Perfecto. Bueno, que te parece si platicamos sobre tu familia? </template>
    </category> 
   
 	<category>
